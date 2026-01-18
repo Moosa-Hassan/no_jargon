@@ -1,7 +1,6 @@
 import streamlit as st
 import requests
 
-# Page config
 st.set_page_config(
     page_title="Plainly",
     page_icon="🧠",
@@ -11,7 +10,6 @@ st.set_page_config(
 st.title("🧠 Plainly")
 st.write("Turn complex text into language humans understand.")
 
-# Input
 text = st.text_area(
     "Paste complex text here",
     height=180,
@@ -23,7 +21,6 @@ mode = st.selectbox(
     ["very_simple", "simple", "normal"]
 )
 
-# Button
 if st.button("Explain"):
     if not text.strip():
         st.warning("Please enter some text.")
@@ -45,7 +42,6 @@ if st.button("Explain"):
                     st.write(result)
                 else:
                     st.error(f"Backend error: {response.status_code}")
-                    # st.write(response.text) 
 
             except Exception as e:
                 st.error("Could not connect to backend.")

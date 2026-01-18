@@ -1,3 +1,7 @@
 # ignore any env file
 .env
 
+# ignore any caches
+
+__pycache__/
+*.pyc
